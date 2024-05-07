@@ -1,0 +1,703 @@
+body {
+}
+
+@import "flex";
+@import "mixin";
+@import "color";
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.btn-create {
+  @include button(20px, 30px, 5px, $primaryColor);
+  @include text($whiteColor, 600, 18px);
+}
+
+header {
+  height: 100px;
+  margin-bottom: 100px;
+  .container {
+    padding-top: 30px;
+    img {
+      width: 230px;
+      height: 45px;
+    }
+
+    form {
+      .input-group {
+        display: flex;
+
+        button {
+          border: 1px solid gray;
+          border-right: none;
+          padding-left: 20px;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+
+          i {
+            @include text($charcoalColor, 0, 18px);
+          }
+        }
+
+        input {
+          @include text($charcoalColor, 500, 18px);
+          width: 480px;
+          border: 1px solid gray;
+          border-left: none;
+          padding: 15px;
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+        }
+      }
+    }
+
+    > button {
+      @include text($whiteColor, 700, 22px);
+      @include button(15px, 20px, 5px, $titleColor);
+    }
+  }
+}
+
+.introduce {
+  .title {
+    width: 50%;
+
+    [class^="color-"] {
+      @include text(none, 700, 80px);
+    }
+
+    .text {
+      margin-top: 20px;
+      @include text(#7d7d7d, 500, 25px);
+      width: 80%;
+      padding-bottom: 100px;
+      line-height: 46px;
+    }
+
+    button {
+      margin-top: 100px;
+      @include text($whiteColor, 700, 27px);
+      @include button(25px, 80px, 5px, $primaryColor);
+    }
+  }
+
+  .benefit {
+    ul {
+      li {
+        text-align: center;
+        width: 260px;
+        height: 240px;
+        background-color: $whiteColor;
+        margin: 0px 30px 30px 0px;
+        box-shadow: 0px 14px 44px rgba(173, 168, 168, 0.25);
+        border-radius: 10px;
+        padding: 10px 5px;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+
+        img {
+          height: 100px;
+          width: 100px;
+          margin-top: 10%;
+        }
+
+        p {
+          @include text($charcoalColor, 600, 26px);
+        }
+      }
+    }
+  }
+}
+
+.products {
+  margin-top: 100px;
+
+  .out-products {
+    display: inline-block;
+    @include text($charcoalColor, 400, 16px);
+    padding: 12px 30px;
+    background-color: #f3f4fb;
+    border-radius: 30px;
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    @include text($titleColor, 700, 40px);
+    margin-bottom: 50px;
+  }
+
+  ul {
+    li {
+      margin-right: 40px;
+      position: relative;
+      margin-bottom: 80px;
+      padding-bottom: 25px;
+      cursor: pointer;
+
+      img {
+        height: 30px;
+        width: 30px;
+        margin-right: 10px;
+      }
+
+      .bg-img {
+        position: absolute;
+        background-color: #f3f4fb;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        top: -5px;
+        left: -5px;
+        z-index: -1;
+      }
+
+      p {
+        @include text($charcoalColor, 600, 24px);
+      }
+    }
+
+    .active {
+      .bg-img {
+        background-color: rgba(228, 103, 19, 0.08);
+      }
+
+      border-bottom: 4px solid $primaryColor;
+    }
+  }
+}
+
+.invest-banking {
+  margin-bottom: 150px;
+
+  img {
+    width: 50%;
+    height: 370px;
+    margin-right: 100px;
+  }
+
+  .level {
+    .rate-commision {
+      padding-bottom: 10px;
+
+      .rate {
+        @include text($titleColor, 600, 100px);
+      }
+
+      .commision {
+        @include text($charcoalColor, 600, 40px);
+      }
+    }
+
+    .content {
+      @include text(#666666, 400, 18px);
+      line-height: 37px;
+      padding-bottom: 50px;
+    }
+  }
+}
+
+.view-all {
+  position: relative;
+  text-align: center;
+  @include text($primaryColor, 600, 20px);
+  cursor: pointer;
+  z-index: 4;
+  padding-bottom: 100px;
+}
+
+.secure {
+  overflow: hidden;
+  position: relative;
+  height: 926px;
+  background: linear-gradient(180deg, #ff9046 0%, #e46713 100%);
+
+  .secure-title {
+    position: relative;
+    z-index: 3;
+    width: 50%;
+
+    h3 {
+      padding-top: 170px;
+      @include text($whiteColor, 700, 64px);
+      padding-bottom: 40px;
+    }
+
+    p {
+      @include text($whiteColor, 500, 33px);
+    }
+  }
+
+  .bg-img {
+    position: absolute;
+    width: 700px;
+    height: 600px;
+    background-image: url(/public/img/shutterstock_2120849756-[Converted].png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 15%;
+    left: 50%;
+  }
+
+  .bg-hem {
+    position: absolute;
+    height: 1338px;
+    width: 1220px;
+    background-image: url(/public/img/Ellipse1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 0%;
+    left: 20%;
+    z-index: 2;
+  }
+
+  .bg-hem-small {
+    position: absolute;
+    height: 800px;
+    width: 800px;
+    background-image: url(/public/img/Ellipse24.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    left: 45%;
+    top: 10%;
+  }
+}
+
+.learn-grow {
+  margin-top: 170px;
+
+  h3 {
+    text-align: center;
+    @include text($titleColor, 700, 40px);
+  }
+
+  .cards {
+    margin-top: 75px;
+    margin-bottom: 100px;
+
+    .mar-left-right {
+      margin: 0px 30px;
+    }
+
+    .card {
+      width: 420px;
+      height: 500px;
+      position: relative;
+
+      span {
+        position: absolute;
+        height: 326px;
+        width: 350px;
+        background-color: #f7f7f7;
+        top: 0;
+        left: 10px;
+        z-index: -1;
+        border-radius: 20px;
+      }
+
+      .img-1 {
+        position: relative;
+        left: 18%;
+        top: 15px;
+        height: 305px;
+        width: 239px;
+      }
+
+      .img-2 {
+        position: relative;
+        left: 35px;
+        top: 20px;
+        width: 300px;
+        height: 294.64px;
+      }
+
+      .img-3 {
+        position: relative;
+        left: 15px;
+        width: 350px;
+        height: 292.36px;
+      }
+    }
+
+    p {
+      padding-top: 42px;
+      text-align: center;
+      @include text($charcoalColor, 500, 25px);
+    }
+  }
+}
+
+.the-press {
+  margin-top: 100px;
+
+  h3 {
+    @include text($titleColor, 700, 40px);
+    text-align: center;
+    margin-bottom: 75px;
+
+    &::after {
+      content: "";
+      height: 2px;
+      width: 430px;
+      background-color: grey;
+      margin-left: 50px;
+    }
+
+    &::before {
+      content: "";
+      height: 2px;
+      width: 430px;
+      background-color: grey;
+      margin-right: 50px;
+    }
+  }
+
+  img {
+    width: 945px;
+    height: 48px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 95px;
+  }
+}
+
+.investors {
+  padding-bottom: 160px;
+
+  .header {
+    padding-bottom: 80px;
+
+    h3 {
+      @include text($charcoalColor, 700, 40px);
+    }
+
+    p {
+      @include text($primaryColor, 600, 22px);
+      cursor: pointer;
+    }
+  }
+
+  .card-comment {
+    margin-right: 20px;
+    background-color: $whiteColor;
+    width: 420px;
+    height: 460px;
+    box-shadow: 0px 14px 44px rgba(173, 168, 168, 0.25);
+    border-radius: 28px;
+    padding: 35px;
+
+    .rate {
+      padding-bottom: 15px;
+
+      img {
+        width: 68px;
+        height: 68px;
+        margin-right: 20px;
+      }
+
+      i {
+        @include text(#ffc107, none, 22px);
+        margin-left: 8px;
+      }
+    }
+
+    p {
+      @include text(#7d7d7d, 400, 18px);
+      line-height: 34px;
+    }
+
+    .name {
+      @include text($charcoalColor, 600, 24px);
+      padding-top: 35px;
+      padding-bottom: 5px;
+    }
+  }
+}
+
+.any-where-time {
+  .invest {
+    width: 45%;
+    margin-right: 100px;
+    position: relative;
+
+    img {
+      height: 66px;
+      width: 66px;
+      margin-right: 37px;
+    }
+
+    h2 {
+      @include text($charcoalColor, 600, 60px);
+      width: 460px;
+      margin-bottom: 35px;
+    }
+
+    h4 {
+      @include text($charcoalColor, 600, 22px);
+      margin-bottom: 20px;
+    }
+
+    p {
+      @include text($charColor, 400, 18px);
+      line-height: 38px;
+    }
+
+    .invest-content {
+      @include text($charColor, 500, 20px);
+      line-height: 38px;
+      width: 460px;
+      padding-bottom: 35px;
+    }
+
+    .stay-on {
+      margin-bottom: 45px;
+    }
+  }
+
+  .software {
+    position: relative;
+    height: 700px;
+
+    p {
+      @include text($whiteColor, 500, 28px);
+    }
+
+    i {
+      font-size: 16px;
+      position: absolute;
+      top: 10%;
+    }
+
+    .ios {
+      img {
+        width: 270px;
+        height: 330px;
+      }
+
+      transition: 0.4s;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    .android {
+      height: 330px;
+      width: 260px;
+      background-color: $titleColor;
+      border-radius: 25px;
+      margin-top: 30px;
+      position: absolute;
+      cursor: pointer;
+      transition: 0.4s;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      img {
+        position: absolute;
+        width: 230px;
+        height: 250px;
+        top: 5%;
+        left: 5%;
+      }
+
+      p {
+        position: absolute;
+        bottom: 7%;
+        left: 10%;
+      }
+    }
+
+    .web {
+      height: 360px;
+      width: 250px;
+      background-color: #e86a16;
+      border-radius: 25px;
+      position: absolute;
+      left: 115%;
+      top: 25%;
+      cursor: pointer;
+      transition: 0.4s;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      p {
+        position: absolute;
+        top: 20%;
+        left: 13%;
+      }
+
+      img {
+        width: 250px;
+        height: 172px;
+        position: absolute;
+        top: 34%;
+        left: 0%;
+      }
+    }
+  }
+}
+
+.tickets {
+  height: 460px;
+  margin-top: 155px;
+  margin-bottom: 182px;
+
+  .container {
+    position: relative;
+    height: 100%;
+    background-color: $titleColor;
+    border-radius: 40px;
+  }
+
+  .step {
+    width: 60%;
+    padding: 80px;
+
+    h4 {
+      @include text($whiteColor, 700, 40px);
+    }
+
+    p {
+      width: 544px;
+      margin-top: 40px;
+      margin-bottom: 25px;
+      padding-bottom: 50px;
+      line-height: 38px;
+      @include text(#e0e3ea, 400, 18px);
+    }
+  }
+
+  .background-img {
+    position: absolute;
+    width: 320px;
+    height: 400px;
+    background-image: url(/public/img/image8.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    right: 15%;
+    bottom: 0;
+  }
+}
+
+footer {
+  .bg-charcoal {
+    background-color: $charcoalColor;
+  }
+
+  .bg-coal {
+    background-color: $coalColor;
+  }
+
+  .head {
+    padding-top: 100px;
+    height: 590px;
+
+    img {
+      width: 255px;
+      height: 50px;
+    }
+
+    .idbi {
+      width: 22%;
+
+      .contact {
+        padding-bottom: 5px;
+        @include text($whiteColor, 600, 19px);
+      }
+
+      p {
+        padding-top: 50px;
+        padding-bottom: 22px;
+        @include text($whiteColor, 400, 18px);
+      }
+
+      span {
+        @include text($primaryColor, 600, 17px);
+      }
+    }
+  }
+
+  ul {
+    p {
+      @include text($whiteColor, 700, 22px);
+      margin-bottom: 40px;
+    }
+
+    li {
+      @include text($whiteColor, 600, 17px);
+      line-height: 42px;
+      cursor: pointer;
+      transition: 0.4s all ease-in;
+      &:hover {
+        color: $primaryColor;
+      }
+    }
+  }
+
+  .capital {
+    margin-top: 41px;
+
+    p {
+      padding-top: 30px;
+      border-top: 1px solid #585b71;
+      @include text($whiteColor, 600, 17px);
+    }
+  }
+
+  .end {
+    height: 900px;
+
+    [class^="title"] {
+      @include text($whiteColor, 700, 22px);
+      padding-bottom: 14px;
+    }
+
+    .padding-top {
+      padding-top: 95px;
+    }
+
+    .links p {
+      @include text($primaryColor, 500, 16px);
+      text-transform: uppercase;
+      margin-bottom: 40px;
+
+      &.or {
+        padding: 0 5px;
+        @include text($whiteColor, 900, 13px);
+      }
+    }
+
+    .media {
+      text-transform: uppercase;
+      @include text($footerColor, 500, 18px);
+      margin-top: 20px;
+      margin-bottom: 65px;
+    }
+
+    .disclaimer {
+      @include text($whiteColor, 700, 22px);
+      text-transform: uppercase;
+      margin-bottom: 41px;
+    }
+
+    .content {
+      @include text($footerColor, 400, 18px);
+      line-height: 38px;
+    }
+
+    .padding-b {
+      padding-bottom: 45px;
+    }
+  }
+}

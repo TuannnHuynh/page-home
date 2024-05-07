@@ -1,0 +1,17 @@
+@mixin text($color, $weight, $size) {
+    color: $color;
+    font-weight: $weight;
+    font-size: $size;
+}
+
+@mixin button($p-top-bottom, $p-left-right, $radius, $backgound) {
+    padding: $p-top-bottom $p-left-right;
+    border-radius: $radius;
+    background-color: $backgound;
+    transition: 0.4s;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
